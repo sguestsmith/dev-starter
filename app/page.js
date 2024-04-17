@@ -6,6 +6,7 @@ import FullWidthImage from "./components/FullWidthImage";
 import Cards from "./components/Cards";
 import CTA from "./components/CTA";
 import Hero from "./components/Hero";
+import HalfSquares from "./components/HalfSquares";
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
     <CTA />
 
       <FullWidthImage />
-      <SplitHero />
-      <div class="mt-36 py-24 flex flex-row justify-center bg-sky-50">
+      <HalfSquares />
+      {/* <SplitHero /> */}
+      <div class="py-24 md:flex md:flex-row justify-center bg-sky-50">
       <Cards />
       <Cards />
     </div>
