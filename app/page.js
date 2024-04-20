@@ -15,16 +15,19 @@ export default function Home() {
     
 
 
-    <CTA />
 
-      <FullWidthImage />
-      <HalfSquares />
-      {/* <SplitHero /> */}
+
+
+      <CTA />
       <div class="py-24 md:flex md:flex-row justify-center bg-sky-50">
       <Cards />
       <Cards />
     </div>
-      <Facts />
+    <FullWidthImage />
+      <HalfSquares />
+      {/* <SplitHero /> */}
+ 
+      {/* <Facts /> */}
 
       <Footer />
     </>
