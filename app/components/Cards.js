@@ -12,9 +12,10 @@ export default function Cards() {
         </a>
         <p class="mx-5 mt-8 font-normal leading-8 text-gray-700">We have accommodations for all lifestyles. Stay in our Seaside Cottages for a luxury waterfront vacation, our Forest View Studio for a private and peaceful stay or enjoy the economical comfort and wilderness view of our West Coast Trail Lodge. Conveniently within walking distance to the Renfrew Pub (open year round) for lunch, dinner and drinks along with The Coastal Kitchen Cafe for breakfast and specialty coffee!</p>
        <div className="flex flex-col items-center mt-10 mb-12">
-       <button
+
+         <button
             type="button"
-            className="rounded-md  px-8 py-4 text-md tracking-widest uppercase font-bold text-cyan-600 shadow-sm ring-2 ring-inset ring-cyan-600 hover:text-white hover:bg-cyan-600"
+            className="rounded-md px-8 py-4 text-md tracking-widest uppercase font-bold text-cyan-600 shadow-sm ring-2 ring-inset ring-cyan-600 hover:text-white hover:bg-cyan-600"
           >
             Button text
           </button>
