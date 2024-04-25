@@ -2,20 +2,19 @@
 import { useState, useEffect } from "react";
 import Stack, { onEntryChange } from "../lib/index";
 import Footer from "./components/Footer";
-import FullWidthImage from "./components/FullWidthImage";
-import Cards from "./components/Cards";
-import CTA from "./components/CTA";
+import TextBlock from "./components/TextBlock";
 import Hero from "./components/Hero";
-import HalfSquares from "./components/HalfSquares";
+import NavBar from "./components/NavBar";
+import ImageGallery from "./components/ImageGallery";
 
 export default function Home({ params }) {
   const [entry, setEntry] = useState({});
 
   const getContent = async () => {
-    const entry = await Stack.getElement(
+    const entry = await Stack.getElementWithRefs(
       "blt83a107d22f925d49",
-      "home_page"
-      // ["modular_blocks.image_grid.images.page"]
+      "home_page",
+      ["hero_banner", "page_content.image_gallery.gallery_item.page"]
     );
     console.log(entry);
     setEntry(entry);
@@ -27,14 +26,19 @@ export default function Home({ params }) {
 
   return (
     <>
-      <Hero />
-      <CTA />
-      <div class="py-24 md:flex md:flex-row justify-center bg-sky-50">
-        <Cards />
-        <Cards />
-      </div>
-      <FullWidthImage />
-      <HalfSquares />
+      <NavBar />
+
+      {entry?.hero_banner?.length > 0 && <Hero content={entry.hero_banner} />}
+
+      {entry?.page_content?.map((item, index) => {
+        if (item.hasOwnProperty("text_block")) {
+          return <TextBlock key={index} content={item.text_block} />;
+        }
+        if (item.hasOwnProperty("image_gallery")) {
+          return <ImageGallery key={index} content={item.image_gallery} />;
+        }
+      })}
+
       <Footer />
     </>
   );
