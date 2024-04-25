@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 import Stack, { onEntryChange } from "../lib/index";
 import Footer from "./components/Footer";
@@ -9,6 +9,7 @@ import ImageGallery from "./components/ImageGallery";
 
 export default function Home({ params }) {
   const [entry, setEntry] = useState({});
+  const [loading, SetLoading] = useState(true);
 
   const getContent = async () => {
     const entry = await Stack.getElementWithRefs(
@@ -16,21 +17,26 @@ export default function Home({ params }) {
       "home_page",
       ["hero_banner", "page_content.image_gallery.gallery_item.page"]
     );
-    console.log(entry);
+    // console.log("homepage:", entry);
     setEntry(entry);
+    SetLoading(false);
   };
 
   useEffect(() => {
     onEntryChange(getContent);
   }, []);
 
+  if (loading) {
+    return;
+  }
+
   return (
     <>
       <NavBar />
 
-      {entry?.hero_banner?.length > 0 && <Hero content={entry.hero_banner} />}
+      <Hero content={entry.hero_banner[0]} />
 
-      {entry?.page_content?.map((item, index) => {
+      {entry.page_content?.map((item, index) => {
         if (item.hasOwnProperty("text_block")) {
           return <TextBlock key={index} content={item.text_block} />;
         }

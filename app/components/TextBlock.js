@@ -5,43 +5,35 @@ import {
 } from "@heroicons/react/20/solid";
 
 export default function TextBlock({ content }) {
+
   function icon() {
     if (content.icon == "Globe") {
       return (
-        <GlobeEuropeAfricaIcon
-          className="h-10 w-10 flex-none text-cyan-600"
-          aria-hidden="true"
-          {...content?.$?.icon}
-        />
+        <GlobeEuropeAfricaIcon className="h-10 w-10 flex-none text-cyan-600" aria-hidden="true" {...content?.$?.icon} />
       );
     }
     if (content.icon == "Sun") {
       return (
-        <SunIcon
-          className="h-10 w-10 flex-none text-cyan-600"
-          aria-hidden="true"
-          {...content?.$?.icon}
-        />
+        <SunIcon className="h-10 w-10 flex-none text-cyan-600" aria-hidden="true" {...content?.$?.icon} />
       );
     }
     if (content.icon == "Euro") {
       return (
-        <CurrencyEuroIcon
-          className="h-10 w-10 flex-none text-cyan-600"
-          aria-hidden="true"
-          {...content?.$?.icon}
-        />
+        <CurrencyEuroIcon className="h-10 w-10 flex-none text-cyan-600" aria-hidden="true" {...content?.$?.icon} />
       );
     }
     if (content.icon == "None") {
       return <></>;
     }
   }
+
   return (
     <div className="bg-white">
       <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <dt className="flex items-center gap-x-3 text-base font-semibold text-gray-900 justify-center">
+
+            {/* ----- ICON COMING FROM SELECT MENU IN CONTENTSTACK ----- */}
             {icon()}
           </dt>
 
