@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { useState, useEffect } from "react";
 import Stack, { onEntryChange } from "../lib/index";
 import Footer from "./components/Footer";
