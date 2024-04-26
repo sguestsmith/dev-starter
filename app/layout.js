@@ -14,9 +14,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-      <meta property="og:image" content="/og.png"/>
-      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
