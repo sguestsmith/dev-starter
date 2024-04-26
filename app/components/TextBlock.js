@@ -5,24 +5,32 @@ import {
 } from "@heroicons/react/20/solid";
 
 export default function TextBlock({ content }) {
-
   function icon() {
     if (content.icon == "Globe") {
       return (
-        <GlobeEuropeAfricaIcon className="h-10 w-10 flex-none text-cyan-600" aria-hidden="true" {...content?.$?.icon} />
+        <GlobeEuropeAfricaIcon
+          className="h-10 w-10 flex-none text-cyan-600"
+          aria-hidden="true"
+          {...content?.$?.icon}
+        />
       );
-    }
-    if (content.icon == "Sun") {
+    } else if (content.icon == "Sun") {
       return (
-        <SunIcon className="h-10 w-10 flex-none text-cyan-600" aria-hidden="true" {...content?.$?.icon} />
+        <SunIcon
+          className="h-10 w-10 flex-none text-cyan-600"
+          aria-hidden="true"
+          {...content?.$?.icon}
+        />
       );
-    }
-    if (content.icon == "Euro") {
+    } else if (content.icon == "Euro") {
       return (
-        <CurrencyEuroIcon className="h-10 w-10 flex-none text-cyan-600" aria-hidden="true" {...content?.$?.icon} />
+        <CurrencyEuroIcon
+          className="h-10 w-10 flex-none text-cyan-600"
+          aria-hidden="true"
+          {...content?.$?.icon}
+        />
       );
-    }
-    if (content.icon == "None") {
+    } else if (content.icon == "None") {
       return <></>;
     }
   }
@@ -32,23 +40,23 @@ export default function TextBlock({ content }) {
       <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <dt className="flex items-center gap-x-3 text-base font-semibold text-gray-900 justify-center">
-
             {/* ----- ICON COMING FROM SELECT MENU IN CONTENTSTACK ----- */}
             {icon()}
           </dt>
 
           <h5
-            className="mt-8 text-2xl font-bold text-center tracking-widest text-neutral-700  tracking-wide"
+            className="mt-8 text-2xl font-bold text-center tracking-widest text-neutral-700"
             {...content?.$?.header}
           >
             {content.header}
           </h5>
 
           <p
-            className="mx-5 mt-8 font-normal text-left leading-8 text-gray-700 text-block"
+            className="mx-5 mt-8 font-normal text-left leading-8 text-gray-700 text-block whitespace-pre-line"
             {...content?.$?.text}
-            dangerouslySetInnerHTML={{ __html: content.text }}
-          ></p>
+          >
+            {content.multi}
+          </p>
 
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <button

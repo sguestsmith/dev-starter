@@ -19,7 +19,7 @@ export default function NavBar() {
       "menu",
       [""]
     );
-    // console.log("header:", entry);
+    console.log("header:", entry);
     setEntry(entry);
     SetLoading(false);
   };
@@ -33,10 +33,10 @@ export default function NavBar() {
   }
 
   return (
-    <header className="bg-white">
+    <header className="bg-white shadow-md">
       <nav className="flex items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
 
             {/* ----- LOGO IMAGE SERVED FROM CONTENTSTACK ----- */}
             <img
@@ -59,14 +59,14 @@ export default function NavBar() {
         <div className="hidden lg:flex lg:gap-x-12">
 
           {/* ----- ITTERATE OVER ARRAY FROM CONTENTSTACK ----- */}
-          {entry.menu_item?.map((item) => (
+          {entry.menu_items?.map((item) => (
             <a
-              key={item.title}
-              href={item.href}
+              key={item.menu_item.title}
+              href={item.menu_item.href}
               className="text-sm font-semibold leading-6 text-gray-900"
-              {...item?.$?.title}
+              {...item?.menu_item?.$?.title}
             >
-              {item.title}
+              {item.menu_item.title}
             </a>
           ))}
 
