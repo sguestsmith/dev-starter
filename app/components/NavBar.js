@@ -15,7 +15,7 @@ export default function NavBar() {
 
   const getContent = async () => {
     const entry = await Stack.getElementWithRefs(
-      "blt1a79a05fcd81238b",
+      "blt72f3cc1b5ff28c4a",
       "menu",
       [""]
     );

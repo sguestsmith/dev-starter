@@ -13,7 +13,7 @@ export default function Home({ params }) {
 
   const getContent = async () => {
     const entry = await Stack.getElementWithRefs(
-      "blt83a107d22f925d49",
+      "blta86813889dab88d1",
       "home_page",
       ["hero_banner", "page_content.image_gallery.gallery_item.page"]
     );
