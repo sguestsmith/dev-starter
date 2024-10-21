@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import Stack, { onEntryChange } from "../../../lib/index";
 import NavBar from "@/app/components/NavBar";
-import Footer from "@/app/components/Footer";
 
 export default function Page({ params }) {
   const [entry, setEntry] = useState({});
