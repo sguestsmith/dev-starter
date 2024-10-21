@@ -14,13 +14,12 @@ export default function NavBar() {
   const [loading, SetLoading] = useState(true);
 
   const getContent = async () => {
-    const entry = await Stack.getElementWithRefs(
-      "blt72f3cc1b5ff28c4a",
+    const entry = await Stack.getElementByTypeWtihRefs(
       "menu",
       [""]
     );
-    console.log("header:", entry);
-    setEntry(entry);
+    console.log("header:", entry[0][0]);
+    setEntry(entry[0][0]);
     SetLoading(false);
   };
 

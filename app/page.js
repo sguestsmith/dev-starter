@@ -12,13 +12,12 @@ export default function Home({ params }) {
   const [loading, SetLoading] = useState(true);
 
   const getContent = async () => {
-    const entry = await Stack.getElementWithRefs(
-      "blta86813889dab88d1",
+    const entry = await Stack.getElementByTypeWtihRefs(
       "home_page",
       ["hero_banner", "page_content.image_gallery.gallery_item.page"]
     );
-    // console.log("homepage:", entry);
-    setEntry(entry);
+    // console.log("homepage:", entry[0][0]);
+    setEntry(entry[0][0]);
     SetLoading(false);
   };
 
