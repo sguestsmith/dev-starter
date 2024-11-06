@@ -53,7 +53,7 @@ export default function TextBlock({ content }) {
 
           <p
             className="mx-5 mt-8 font-normal text-left leading-8 text-gray-700 text-block whitespace-pre-line"
-            {...content?.$?.text}
+            {...content?.$?.multi}
           >
             {content.multi}
           </p>
