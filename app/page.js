@@ -36,14 +36,16 @@ export default function Home({ params }) {
       <Hero content={entry.hero_banner[0]} />
       <div className={entry?.page_content?.length === 0 ? "visual-builder__empty-block-parent" : ""} {...entry?.$?.page_content}>
         {entry.page_content?.map((item, index) => {
-          <div key={index} {...entry?.$?.['modular_blocks__' + index]}>
-            {item.hasOwnProperty("text_block") &&
-              <TextBlock key={index} content={item.text_block} />
-            } 
-            {item.hasOwnProperty("image_gallery") &&
-              <ImageGallery key={index} content={item.image_gallery} />
-            } 
-          </div>
+          return (
+            <div key={index} {...entry?.$?.['page_content__' + index]}>
+              {item.hasOwnProperty("text_block") && (
+                <TextBlock key={index} content={item.text_block} />
+              )}
+              {item.hasOwnProperty("image_gallery") && (
+                <ImageGallery key={index} content={item.image_gallery} />
+              )}
+            </div>
+          );
         })}
       </div>
       <Footer />
