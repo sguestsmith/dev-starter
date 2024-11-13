@@ -49,6 +49,7 @@ export default function Home({ params }) {
         })}
       </div>
       <Footer />
+      {console.log(hello)}
     </>
   );
 }
