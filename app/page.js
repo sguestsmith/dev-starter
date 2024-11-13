@@ -34,16 +34,20 @@ export default function Home({ params }) {
       <NavBar />
 
       <Hero content={entry.hero_banner[0]} />
-
-      {entry.page_content?.map((item, index) => {
-        if (item.hasOwnProperty("text_block")) {
-          return <TextBlock key={index} content={item.text_block} />;
-        }
-        if (item.hasOwnProperty("image_gallery")) {
-          return <ImageGallery key={index} content={item.image_gallery} />;
-        }
-      })}
-
+      <div className={entry?.page_content?.length === 0 ? "visual-builder__empty-block-parent" : ""} {...entry?.$?.page_content}>
+        {entry.page_content?.map((item, index) => {
+          return (
+            <div key={index} {...entry?.$?.['page_content__' + index]}>
+              {item.hasOwnProperty("text_block") && (
+                <TextBlock key={index} content={item.text_block} />
+              )}
+              {item.hasOwnProperty("image_gallery") && (
+                <ImageGallery key={index} content={item.image_gallery} />
+              )}
+            </div>
+          );
+        })}
+      </div>
       <Footer />
     </>
   );
