@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function ImageGallery({ content }) {
   return (
     <div className="max-w-7xl mx-auto mt-8 mb-8 px-8">
@@ -20,3 +22,26 @@ export default function ImageGallery({ content }) {
     </div>
   );
 }
+
+// Define PropTypes for the ImageGallery component to enforce type checking
+ImageGallery.propTypes = {
+  content: PropTypes.shape({
+    gallery_item: PropTypes.arrayOf(
+      PropTypes.shape({
+        page: PropTypes.arrayOf(
+          PropTypes.shape({
+            url: PropTypes.string.isRequired,
+          })
+        ),
+        image: PropTypes.shape({
+          url: PropTypes.string.isRequired,
+        }).isRequired,
+        header: PropTypes.string.isRequired,
+        $: PropTypes.shape({
+          image: PropTypes.object,
+          header: PropTypes.object,
+        }),
+      })
+    ).isRequired,
+  }).isRequired,
+};
