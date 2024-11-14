@@ -13,6 +13,7 @@ export default function Hero({ content }) {
           <div className="text-left">
 
             {/* ----- LIMITED TIME ONLY BANNER ----- */}
+            {/* TODO: Change this to a component for editing in VB */}
             <div className="border border-black rounded-full px-6 py-1 mb-5 inline-block">
               <p className="text-black text-lg font-bold tracking-widest text-transform: uppercase">Limited Time Only</p>
             </div>
