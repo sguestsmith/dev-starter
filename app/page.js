@@ -9,6 +9,8 @@ import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import ImageGallery from "./components/ImageGallery";
 import ProductBlock from "./components/ProductBlock";
+import ImageRow from './components/ImageRow';
+
 
 // Main component function
 export default function Home({ params }) {
@@ -83,6 +85,13 @@ export default function Home({ params }) {
                 <ProductBlock 
                   key={`product-${uniqueKey}`} 
                   content={item.bigcommerce_product} 
+                />
+              )}
+              {/* Render ImageRow if present */}
+              {Object.prototype.hasOwnProperty.call(item, "image_row") && (
+                <ImageRow 
+                  key={`row-${uniqueKey}`} 
+                  content={item.image_row} 
                 />
               )}
             </div>
