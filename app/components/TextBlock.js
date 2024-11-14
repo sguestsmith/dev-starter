@@ -62,9 +62,9 @@ export default function TextBlock({ content }) {
             <button
               type="button"
               className="rounded-md  px-8 py-4 text-md tracking-widest uppercase font-bold text-cyan-600 shadow-sm ring-2 ring-inset ring-cyan-600 hover:text-white hover:bg-cyan-600"
-              {...content?.cta[0].$?.title}
+              {...(content?.cta?.[0]?.$?.title || {})}
             >
-              <a href={content.cta[0].href}>{content.cta[0].title}</a>
+              <a href={content?.cta?.[0]?.href || '#'}>{content?.cta?.[0]?.title || 'Default Title'}</a>
             </button>
           </div>
         </div>

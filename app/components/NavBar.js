@@ -62,7 +62,7 @@ export default function NavBar() {
             <a
               key={item.menu_item.title}
               href={item.menu_item.href}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-lg font-semibold leading-6 text-gray-900"
               {...item?.menu_item?.$?.title}
             >
               {item.menu_item.title}
