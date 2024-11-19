@@ -10,6 +10,8 @@ import NavBar from "./components/NavBar";
 import ImageGallery from "./components/ImageGallery";
 import ProductBlock from "./components/ProductBlock";
 import ImageRow from './components/ImageRow';
+import ImageGrid from './components/imageGrid';
+import HalfSquares from './components/halfSquares';
 
 
 // Main component function
@@ -92,6 +94,20 @@ export default function Home({ params }) {
                 <ImageRow 
                   key={`row-${uniqueKey}`} 
                   content={item.image_row} 
+                />
+              )}
+              {/* Render ImageGrid if present */}
+              {Object.prototype.hasOwnProperty.call(item, "image_grid") && (
+                <ImageGrid 
+                  key={`grid-${uniqueKey}`} 
+                  content={item.image_grid} 
+                />
+              )}
+              {/* Render TextAndImage if present */}
+              {Object.prototype.hasOwnProperty.call(item, "text_and_image") && (
+                <HalfSquares 
+                  key={`text-and-image-${uniqueKey}`} 
+                  content={item.text_and_image} 
                 />
               )}
             </div>
