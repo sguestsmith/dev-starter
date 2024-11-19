@@ -82,11 +82,11 @@ export default function Home({ params }) {
                 />
               )}
               {/* Render ProductBlock if present */}
-              {Object.prototype.hasOwnProperty.call(item, "bigcommerce_product") && (
-                console.log('Found bigcommerce_product:', item.bigcommerce_product) || 
+              {Object.prototype.hasOwnProperty.call(item, "product") && (
+                console.log('Found product:', item.product) || 
                 <ProductBlock 
                   key={`product-${uniqueKey}`} 
-                  content={item.bigcommerce_product} 
+                  content={item.product} 
                 />
               )}
               {/* Render ImageRow if present */}

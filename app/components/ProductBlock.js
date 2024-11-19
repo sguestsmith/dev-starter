@@ -7,7 +7,7 @@ const ProductBlock = ({ content }) => {
   console.log('ProductBlock content:', content);
 
   // Check if content is valid and is an array, otherwise log a warning and return null
-  if (!content || !Array.isArray(content)) {
+  if (!content || !Array.isArray(content.product.data)) {
     console.warn('ProductBlock: Invalid or missing content');
     return null;
   }
@@ -16,9 +16,9 @@ const ProductBlock = ({ content }) => {
   return (
     <div className="product-block container mx-auto py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {content.map((product) => {
+        {content.product.data.map((product) => {
           // Check if the product has a URL, otherwise log a warning and return null
-          if (!product?.url) {
+          if (!product?.custom_url) {
             console.warn('ProductBlock: Product missing required URL');
             return null;
           }
@@ -26,14 +26,14 @@ const ProductBlock = ({ content }) => {
           // Render each product card
           return (
             <div 
-              key={product.url} 
+              key={product.id} 
               className="product-card border rounded-lg overflow-hidden shadow-lg"
             >
               {/* Conditionally render the product image if it exists */}
-              {product.image?.url && (
+              {product.images[0]?.url_standard && (
                 <img 
-                  src={product.image.url} 
-                  alt={product.image.filename || product.title || 'Product image'} 
+                  src={product.images[0].url_standard} 
+                  alt={product.images[0].filename || product.title || 'Product image'} 
                   className="w-full h-48 object-cover"
                 />
               )}
@@ -46,7 +46,7 @@ const ProductBlock = ({ content }) => {
                 )}
                 {/* Render a link to view the product */}
                 <a 
-                  href={product.url} 
+                  href={product.custom_url} 
                   className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
                   target="_blank"
                   rel="noopener noreferrer"
