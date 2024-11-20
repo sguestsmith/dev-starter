@@ -12,7 +12,7 @@ import ProductBlock from "./components/ProductBlock";
 import ImageRow from './components/ImageRow';
 import ImageGrid from './components/imageGrid';
 import HalfSquares from './components/halfSquares';
-
+import PromoBanner from './components/PromoBanner';
 
 // Main component function
 export default function Home({ params }) {
@@ -108,6 +108,13 @@ export default function Home({ params }) {
                 <HalfSquares 
                   key={`text-and-image-${uniqueKey}`} 
                   content={item.text_and_image} 
+                />
+              )}
+              {/* Render TextAndImage if present */}
+              {Object.prototype.hasOwnProperty.call(item, "promo_banner") && (
+                <PromoBanner 
+                  key={`promo-banner-${uniqueKey}`} 
+                  content={item.promo_banner} 
                 />
               )}
             </div>
