@@ -30,7 +30,7 @@ export default function HalfSquares({ content }) {
           <h2 className="text-neutral-700" {...content?.$?.headline}>{content.headline}</h2>
 
           {content.body && (
-              <div className="mt-10 max-w-3xl whitespace-break-spaces article" {...content?.$?.body} dangerouslySetInnerHTML={{ __html: jsonToHtml(content?.body) }}></div>
+              <div className="mt-10 max-w-3xl whitespace-break-spaces article" {...content?.$?.body} dangerouslySetInnerHTML={{ __html: content?.body }}></div>
           )}
 
           {content.button_text && (
