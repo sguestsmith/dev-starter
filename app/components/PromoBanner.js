@@ -9,22 +9,28 @@ export default function PromoBanner({ content }) {
         <img src={content?.background_image?.url} className="mx-auto"/>
         
         {/* Main content container with responsive padding */}
-        <div className=" absolute m-auto m-4 md:my-8 xl:my-12 2xl:my-16 3xl:my-24 max-w-sm md:max-w-md xl:max-w-3xl">
+        <div className=" absolute m-auto m-4 md:my-8 xl:my-12 2xl:my-16 3xl:my-24 max-w-sm md:max-w-md xl:max-w-xl">
           <div className="text-center">
 
             {/* ----- HEADER & TEXT FROM CONTENTSTACK ----- */}
             {/* Title of the hero section */}
-            <h5 className=" text-lg xl:text-5xl font-black tracking-widest text-white leading-none" {...content?.$?.title}>
+            <h5 className={"text-lg lg:text-4xl xl:text-5xl tracking-widest font-black leading-none " +
+              (content?.font_color === "Black"
+                ? "text-black"
+                : "text-white")} {...content?.$?.title}>
               {content.title}
             </h5>
             
             {/* Description text of the hero section */}
-            <p className="mt-4 xl:mt-8 font-normal text-sm xl:text-lg leading-6 text-center text-white tracking-wide" {...content?.$?.text}>
+            <p className={"mt-2 xl:mt-4 font-bold text-sm lg:text-xl xl:text-2xl leading-6 text-center tracking-wide " +
+              (content?.font_color === "Black"
+                ? "text-black"
+                : "text-white")} {...content?.$?.text}>
               {content.text}
             </p>
 
             {/* Call-to-action button */}
-            <div className="mt-4 lg:mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-2 xl:mt-4 flex items-center justify-center gap-x-6">
               <button
                 type="button"
                 className="rounded-md px-8 py-4 text-md tracking-widest uppercase font-extrabold shadow-sm text-black bg-white hover:text-white hover:bg-gray-700"

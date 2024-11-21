@@ -55,7 +55,7 @@ export default function Home({ params }) {
       <NavBar />
       <Hero content={entry.hero_banner[0]} />
       <div 
-        className={entry?.page_content?.length === 0 ? "visual-builder__empty-block-parent" : ""} 
+        className={entry?.page_content?.length === 0 ? "visual-builder__empty-block-parent max-w-screen-2xl mx-auto" : "max-w-screen-2xl mx-auto"} 
         {...entry?.$?.page_content}
       >
         {entry.page_content?.map((item, index) => {

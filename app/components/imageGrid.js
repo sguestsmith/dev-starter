@@ -22,7 +22,7 @@ export default function ImageGrid({ content }) {
                                 {...content.image[0].$?.image}
                             >
                                 <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300" ></div>
-                                <p className="absolute bottom-5 left-5 text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" {...content.image[0].$?.text}>{content.image[0].text}</p>
+                                <p className="absolute bottom-5 left-5 text-white text-3xl" {...content.image[0].$?.text}>{content.image[0].text}</p>
                             </div>
                         </div>
                     }
@@ -48,8 +48,8 @@ export default function ImageGrid({ content }) {
                                         style={{ backgroundImage: `url(${content.image[index].image?.url})` }}
                                         {...content.image[index].$?.image}
                                     >
-                                        <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300" ></div>
-                                        <p className="absolute bottom-5 left-5 text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" {...content.image[index].$?.text}>{content.image[index].text}</p>
+                                        <div className="w-full h-full flex bg-black" ></div>
+                                        <p className="absolute bottom-5 left-5 text-white text-3xl" {...content.image[index].$?.text}>{content.image[index].text}</p>
                                     </div>
                                 </div>
                             )
@@ -82,8 +82,8 @@ export default function ImageGrid({ content }) {
                                         style={{ backgroundImage: `url(${content.image[index].image?.url})` }}
                                         {...content.image[index].$?.image}
                                     >
-                                        <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300" ></div>
-                                        <p className="absolute bottom-5 left-5 text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" {...content.image[index].$?.text}>{content.image[index].text}</p>
+                                        <div className="w-full h-full flex bg-black" ></div>
+                                        <p className="absolute bottom-5 left-5 text-white text-3xl" {...content.image[index].$?.text}>{content.image[index].text}</p>
                                     </div>
                                 </div>
                             )
@@ -119,7 +119,7 @@ export default function ImageGrid({ content }) {
                                         {...content.image[index].$?.image}
                                     >
                                         <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300" ></div>
-                                        <p className="absolute bottom-5 left-5 text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" {...content.image[index].$?.text}>{content.image[index].text}</p>
+                                        <p className="absolute bottom-5 left-5 text-white text-3xl" {...content.image[index].$?.text}>{content.image[index].text}</p>
                                     </div>
                                 </div>
                             )
