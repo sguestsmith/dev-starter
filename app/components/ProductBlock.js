@@ -38,11 +38,17 @@ const ProductBlock = ({ content }) => {
                 />
               )}
               <div className="p-4">
-                {/* Render the product title */}
-                <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
+                {/* Conditionally render the product title if it exists */}
+                {product.name && (
+                <h3 className="text-sm font-normal mb-2 text-transform: capitalize">{product.name}</h3>
+                )}
                 {/* Conditionally render the product description if it exists */}
-                {product.description && (
+                {/* {product.description && (
                   <p className="text-gray-600 mb-4">{product.description}</p>
+                )} */}
+                {/* Conditionally render the product price if it exists */}
+                {product.price && (
+                  <p className="text-lg font-bold mb-4">${product.price}</p>
                 )}
                 {/* Render a link to view the product */}
                 <a 
@@ -51,7 +57,7 @@ const ProductBlock = ({ content }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Product
+                  Shop Now
                 </a>
               </div>
             </div>

@@ -1,6 +1,6 @@
 export default function PromoBanner({ content }) {
   return (
-    <div className=" m-4 lg:m-24">
+    <div className=" m-8 lg:m-23">
       {/* Container for the hero section with a black background */}
       <div className="flex place-content-center">
         
@@ -14,7 +14,7 @@ export default function PromoBanner({ content }) {
 
             {/* ----- HEADER & TEXT FROM CONTENTSTACK ----- */}
             {/* Title of the hero section */}
-            <h5 className={"text-lg lg:text-4xl xl:text-5xl tracking-widest font-black leading-none " +
+            <h5 className={"text-lg lg:text-4xl xl:text-3xl tracking-widest font-black leading-none text-transform: capitalize pt-9 " +
               (content?.font_color === "Black"
                 ? "text-black"
                 : "text-white")} {...content?.$?.title}>
@@ -22,7 +22,7 @@ export default function PromoBanner({ content }) {
             </h5>
             
             {/* Description text of the hero section */}
-            <p className={"mt-2 xl:mt-4 font-bold text-sm lg:text-xl xl:text-2xl leading-6 text-center tracking-wide " +
+            <p className={"mt-2 xl:mt-4 font-light text-sm lg:text-sm xl:text-1xl leading-6 text-center tracking-wide " +
               (content?.font_color === "Black"
                 ? "text-black"
                 : "text-white")} {...content?.$?.text}>
