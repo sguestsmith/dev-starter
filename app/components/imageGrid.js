@@ -19,12 +19,12 @@ export default function ImageGrid({ content }) {
                     }
                     {/* Render the image if the URL is present */}
                     {content.image[0].image?.url &&
-                        <div className="relative col-span-4 row-span-2 w-full " {...content.$.image__0}>
+                        <div className="relative col-span-4 row-span-2 w-full rounded-lg" {...content.$.image__0}>
                             <div className="bg-center bg-cover group w-full h-full rounded-lg" 
                                 style={{ backgroundImage: `url(${content.image[0].image?.url})` }}
                                 {...content.image[0].$?.image}
                             >
-                                <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300" ></div>
+                                <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-lg" ></div>
                                 <p className="absolute bottom-5 left-5 text-white text-3xl" {...content.image[0].$?.text}>{content.image[0].text}</p>
                             </div>
                         </div>
@@ -47,12 +47,12 @@ export default function ImageGrid({ content }) {
                             )
                         else {
                             return (
-                                <div key={index} className="relative col-span-2 row-span-2 w-full " {...content.$['image__' + index]}>
-                                    <div className="bg-center bg-cover group w-full h-full"
+                                <div key={index} className="relative col-span-2 row-span-2 w-full rounded-lg" {...content.$['image__' + index]}>
+                                    <div className="bg-center bg-cover group w-full h-full rounded-lg"
                                         style={{ backgroundImage: `url(${content.image[index].image?.url})` }}
                                         {...content.image[index].$?.image}
                                     >
-                                        <div className="w-full h-full flex bg-black" ></div>
+                                        <div className="w-full h-full flex bg-black rounded-lg" ></div>
                                         <p className="absolute bottom-5 left-5 text-white text-3xl" {...content.image[index].$?.text}>{content.image[index].text}</p>
                                     </div>
                                 </div>
@@ -81,11 +81,11 @@ export default function ImageGrid({ content }) {
                             return (
                                 <div key={index} className={"relative  w-full " +
                                     (index === 0 ? "col-span-2 row-span-2" : "col-span-2")} {...content.$['image__' + index]}>
-                                    <div className="bg-center bg-cover group w-full h-full"
+                                    <div className="bg-center bg-cover group w-full h-full rounded-lg"
                                         style={{ backgroundImage: `url(${content.image[index].image?.url})` }}
                                         {...content.image[index].$?.image}
                                     >
-                                        <div className="w-full h-full flex bg-black" ></div>
+                                        <div className="w-full h-full flex bg-black rounded-lg" ></div>
                                         <p className="absolute bottom-5 left-5 text-white text-3xl" {...content.image[index].$?.text}>{content.image[index].text}</p>
                                     </div>
                                 </div>
@@ -117,11 +117,11 @@ export default function ImageGrid({ content }) {
                                 <div key={index} className={"relative  w-full " +
                                     (index === 0 ? "col-span-2 row-span-2" :
                                         index === 3 ? "col-span-2" : "")} {...content.$['image__' + index]}>
-                                    <div className="bg-center bg-cover group w-full h-full"
+                                    <div className="bg-center bg-cover group w-full h-full rounded-lg"
                                         style={{ backgroundImage: `url(${content.image[index].image?.url})` }}
                                         {...content.image[index].$?.image}
                                     >
-                                        <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300" ></div>
+                                        <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-lg" ></div>
                                         <p className="absolute bottom-5 left-5 text-white text-3xl" {...content.image[index].$?.text}>{content.image[index].text}</p>
                                     </div>
                                 </div>
