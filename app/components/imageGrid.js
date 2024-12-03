@@ -1,13 +1,15 @@
 export default function ImageGrid({ content }) {
     return (
         <div className="max-w-8xl mx-auto mt-32 mb-32 px-8 font-cinzel">
+            {/* Render an empty block if there are no images */}
             {content?.image?.length === 0 &&
                 <div className="h-[800px] visual-builder__empty-block-parent" {...content?.$?.image}>
-
                 </div>
             }
+            {/* Render a single image if there is exactly one image */}
             {content?.image?.length === 1 &&
                 <div className="grid grid-cols-4 h-[800px] gap-6" {...content?.$?.image}>
+                    {/* Check if the image URL is missing */}
                     {!content.image[0].image?.url &&
                         <div className="col-span-4 row-span-2 h-full bg-gray-400 flex items-center justify-center" {...content.image[0].$?.image} >
                             <svg className="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
@@ -15,9 +17,10 @@ export default function ImageGrid({ content }) {
                             </svg>
                         </div>
                     }
+                    {/* Render the image if the URL is present */}
                     {content.image[0].image?.url &&
                         <div className="relative col-span-4 row-span-2 w-full " {...content.$.image__0}>
-                            <div className="bg-center bg-cover group w-full h-full"
+                            <div className="bg-center bg-cover group w-full h-full rounded-lg" 
                                 style={{ backgroundImage: `url(${content.image[0].image?.url})` }}
                                 {...content.image[0].$?.image}
                             >
@@ -28,6 +31,7 @@ export default function ImageGrid({ content }) {
                     }
                 </div>
             }
+            {/* Render two images if there are exactly two images */}
             {content?.image?.length === 2 &&
                 <div className="grid grid-cols-4 h-[800px] gap-6" {...content?.$?.image}>
                     {[0, 1].map((item, index) => {
@@ -55,7 +59,6 @@ export default function ImageGrid({ content }) {
                             )
                         }
                     })}
-
                 </div>
             }
             {content?.image?.length === 3 &&
