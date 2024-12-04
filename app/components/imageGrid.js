@@ -21,7 +21,9 @@ export default function ImageGrid({ content }) {
                     {content.image[0].image?.url &&
                         <div className="relative col-span-4 row-span-2 w-full rounded-lg" {...content.$.image__0}>
                             <div className="bg-center bg-cover group w-full h-full rounded-lg" 
-                                style={{ backgroundImage: `url(${content.image[0].image?.url})` }}
+                                style={{ 
+                                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(${content.image[0].image?.url})` 
+                                }}
                                 {...content.image[0].$?.image}
                             >
                                 <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-lg" ></div>
@@ -49,7 +51,9 @@ export default function ImageGrid({ content }) {
                             return (
                                 <div key={index} className="relative col-span-2 row-span-2 w-full rounded-lg" {...content.$['image__' + index]}>
                                     <div className="bg-center bg-cover group w-full h-full rounded-lg"
-                                        style={{ backgroundImage: `url(${content.image[index].image?.url})` }}
+                                        style={{ 
+                                            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(${content.image[index].image?.url})` 
+                                        }}
                                         {...content.image[index].$?.image}
                                     >
                                         <div className="w-full h-full flex bg-black rounded-lg" ></div>
@@ -82,7 +86,9 @@ export default function ImageGrid({ content }) {
                                 <div key={index} className={"relative  w-full " +
                                     (index === 0 ? "col-span-2 row-span-2" : "col-span-2")} {...content.$['image__' + index]}>
                                     <div className="bg-center bg-cover group w-full h-full rounded-lg"
-                                        style={{ backgroundImage: `url(${content.image[index].image?.url})` }}
+                                        style={{ 
+                                            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(${content.image[index].image?.url})` 
+                                        }}
                                         {...content.image[index].$?.image}
                                     >
                                         <div className="w-full h-full flex bg-black rounded-lg" ></div>
@@ -118,7 +124,9 @@ export default function ImageGrid({ content }) {
                                     (index === 0 ? "col-span-2 row-span-2" :
                                         index === 3 ? "col-span-2" : "")} {...content.$['image__' + index]}>
                                     <div className="bg-center bg-cover group w-full h-full rounded-lg"
-                                        style={{ backgroundImage: `url(${content.image[index].image?.url})` }}
+                                        style={{ 
+                                            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(${content.image[index].image?.url})` 
+                                        }}
                                         {...content.image[index].$?.image}
                                     >
                                         <div className="w-full h-full flex bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-lg" ></div>
